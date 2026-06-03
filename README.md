@@ -1,46 +1,33 @@
 # Clovis Book Archive APK
 
-This repository contains the release APK for the **Clovis Star Library** Android app.
+This repository contains the ready-to-install Android APK for the Clovis Star Library / Book Archive app.
 
-## App
+## APK
 
-**Clovis Star Library** makes the Clovis Star Gnostic Library easier to browse on Android. The app provides a searchable catalog, collection filters, readable book summaries, share actions, and one-tap access to the live archive reader pages.
+- File: `clovis-star-library-1.1.0.apk`
+- Package: `com.clovisstar.library`
+- Version: `1.1.0`
+- Version code: `5`
+- Min SDK: `23`
+- Target SDK: `36`
+- Size: `94,365` bytes
+- SHA-256: `7F5FE78D6414758D3E7E1A51C4B9963424877A8E52F3BA5125D8A7607627E24B`
 
-## Archive Source
+## App Details
 
-The app uses the live Clovis Star library feed:
+The app provides a modern mobile interface for searching and reading the Clovis Star library archive. It uses the live archive feed at:
 
 `https://clovisstar.com/api/library.php`
 
-The feed currently exposes the static reader archive under:
+The app also includes mobile menu links for:
 
-`https://clovisstar.com/books/...`
+- Royal Game of Ur: `https://royalgameofur.clovisstar.com/`
+- Senterej: `https://senterej.clovisstar.com/`
 
-The API is read-only, returns public catalog records, and does not expose database credentials. The app also includes a bundled fallback catalog so the library index remains usable if the live feed is temporarily unavailable.
+## Repository Scope
 
-## Release
-
-- APK: `clovis-star-library-1.0.2.apk`
-- Android package: `com.clovisstar.library`
-- Version: `1.0.2`
-- Version code: `3`
-- Minimum Android SDK: `23`
-- Target Android SDK: `36`
-- SHA-256: `44F045256D001DB5B7FF52B98F4B232988C3090615336AEACB7477C9F1155834`
-- Size: `95631` bytes
-
-## Contents
-
-This repository intentionally contains only:
-
-- the release APK
-- this README
-- the `.gitignore` file that prevents development files from being added
-
-No development files, source code, signing keys, database credentials, build folders, or workspace files are included.
+This repository intentionally includes only the compiled APK, this README, and `.gitignore`. It does not include development source files, build folders, signing keys, database credentials, or other internal project files.
 
 ## License
 
-All rights reserved.
-
-No permission is granted to copy, modify, redistribute, sublicense, sell, decompile, reverse engineer, or create derivative works from this APK or associated archive materials unless explicitly authorized in writing by the rights holder.
+All rights reserved. No source or binary redistribution rights are granted except by the repository owner.
