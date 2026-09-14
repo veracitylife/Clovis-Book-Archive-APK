@@ -31,3 +31,9 @@ This repository intentionally includes only the compiled APK, this README, and `
 ## License
 
 All rights reserved. No source or binary redistribution rights are granted except by the repository owner.
+
+## THOTH 1.2.0 source update
+
+The `android-thoth-app/` directory now contains the source project for version 1.2.0. It adds an Ask THOTH button and a full-page THOTH chat screen backed by the live Clovis Star member session. Authentication, CSRF, membership entitlements, rate limits, notes, and payment upgrade rules remain server-controlled at `https://clovisstar.com`.
+
+GitHub Actions builds a debug APK for functional testing. A production in-place upgrade requires the original release signing key, which is not stored in this repository.
