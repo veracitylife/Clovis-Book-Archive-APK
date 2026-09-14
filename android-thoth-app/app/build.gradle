@@ -1,0 +1,19 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.clovisstar.library'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.clovisstar.library'
+        minSdk 23
+        targetSdk 36
+        versionCode 6
+        versionName '1.2.0'
+    }
+
+    buildTypes {
+        release { minifyEnabled false }
+    }
+}
+
