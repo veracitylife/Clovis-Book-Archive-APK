@@ -1,39 +1,44 @@
 # Clovis Book Archive APK
 
-This repository contains the ready-to-install Android APK for the Clovis Star Library / Book Archive app.
+This repository contains the complete Clovis Star Library Android app, including the book archive experience and the THOTH member chat entry point.
 
-## APK
+## Downloadable builds
 
-- File: `clovis-star-library-1.1.0.apk`
-- Package: `com.clovisstar.library`
-- Version: `1.1.0`
-- Version code: `5`
-- Min SDK: `23`
-- Target SDK: `36`
-- Size: `94,365` bytes
-- SHA-256: `7F5FE78D6414758D3E7E1A51C4B9963424877A8E52F3BA5125D8A7607627E24B`
+- Legacy release: `clovis-star-library-1.1.0.apk` (version 1.1.0, version code 5)
+- THOTH update: `clovis-star-library-1.2.0-thoth-debug.apk` (version 1.2.0, version code 6, debug build)
 
-## App Details
+The 1.2.0 build preserves package ID `com.clovisstar.library` and adds a native Ask THOTH button that opens the full-page member chat at `https://clovisstar.com/members/thoth/`.
 
-The app provides a modern mobile interface for searching and reading the Clovis Star library archive. It uses the live archive feed at:
+The 1.2.0 debug APK is built by GitHub Actions and is intended for functional testing. The original Android release signing key is not stored in this repository, so a release-signed build with that key is required for an in-place upgrade over an existing 1.1.0 installation.
 
-`https://clovisstar.com/api/library.php`
+## App behavior
 
-The app also includes mobile menu links for:
+The app uses the live Clovis Star website for the complete experience:
 
-- Royal Game of Ur: `https://royalgameofur.clovisstar.com/`
-- Senterej: `https://senterej.clovisstar.com/`
+- book-library browsing and reading;
+- member registration, login, password reset, and logout;
+- THOTH chat;
+- member dashboard and saved notes;
+- membership entitlements, question limits, and payment upgrades.
 
-## Repository Scope
+The server remains authoritative for authentication, CSRF/session validation, membership permissions, rate limits, and THOTH logic. The Android WebView shares its session cookies between the library and THOTH pages.
 
-This repository intentionally includes only the compiled APK, this README, and `.gitignore`. It does not include development source files, build folders, signing keys, database credentials, or other internal project files.
+The legacy library feed is `https://clovisstar.com/api/library.php`.
+
+## Source and build
+
+The Android source is in `android-thoth-app/`. Build locally with:
+
+```bash
+./gradlew assembleDebug
+```
+
+The GitHub Actions workflow is at `.github/workflows/build-apk.yml` and publishes a downloadable debug artifact for each source update.
+
+## Repository scope
+
+This repository does not contain signing keys, database credentials, API keys, raw environment files, or other private production configuration.
 
 ## License
 
 All rights reserved. No source or binary redistribution rights are granted except by the repository owner.
-
-## THOTH 1.2.0 update
-
-The `android-thoth-app/` directory contains the Android source for version 1.2.0. It preserves the complete book-library experience and adds an Ask THOTH button that opens a full-page chat screen at `https://clovisstar.com/members/thoth/`. The live site remains authoritative for login, CSRF, membership entitlements, hourly/daily/monthly quotas, notes, and payment upgrades.
-
-The root GitHub Actions workflow builds a debug APK. A production in-place upgrade requires the original Android release signing key, which is not stored in this repository.
